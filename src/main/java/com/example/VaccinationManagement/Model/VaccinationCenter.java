@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -24,6 +27,12 @@ public class VaccinationCenter {
     @Column(name = "center_type")
     @Enumerated(EnumType.STRING)
     CenterType centerType;
+
+    @OneToMany(mappedBy = "vaccinationCenter", cascade = CascadeType.ALL)
+    List<Doctor> doctorList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "vaccinationCenter", cascade = CascadeType.ALL)
+    List<Appointment> appointments = new ArrayList<>();
 
 
 }

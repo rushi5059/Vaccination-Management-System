@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -40,5 +43,17 @@ public class User {
 
     @Column(name = "is_dose_2_taken")
     boolean isDose2Taken;
+
+    //  parent to child (one-to-many relation)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Appointment> appointment = new ArrayList<>();
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    Dose1 dose1;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    Dose2 dose2;
+
+
 
 }
