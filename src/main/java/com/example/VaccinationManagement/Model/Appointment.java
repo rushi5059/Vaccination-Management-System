@@ -44,9 +44,6 @@ public class Appointment {
     @JoinColumn
     Doctor doctor;
 
-    @ManyToOne
-    @JoinColumn
-    VaccinationCenter vaccinationCenter;
 
 
 
