@@ -19,7 +19,7 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE) // make all variables private inside an Entity
 public class Dose2 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     @Column(name = "dose1_id")

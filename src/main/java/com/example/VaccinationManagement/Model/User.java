@@ -16,6 +16,8 @@ import java.util.List;
 @Table(name = "user")
 //indication that this is the name of table
 //good practice
+@Builder
+//write @Builder over the class whose object we want to create....
 
 public class User {
     @Id
