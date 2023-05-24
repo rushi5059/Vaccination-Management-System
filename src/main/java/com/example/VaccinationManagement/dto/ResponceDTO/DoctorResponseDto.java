@@ -1,25 +1,20 @@
 package com.example.VaccinationManagement.dto.ResponceDTO;
 
-import com.example.VaccinationManagement.Enum.Gender;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE) // make all variables private inside an Entity
 @Builder
-public class FindByEmailDto {
-
+public class DoctorResponseDto {
     String name;
 
-    int age;
+    String emailId;
 
     String mobNo;
 
-    Gender gender;
+    CenterResponseDto centerResponseDto;
 
-    boolean isDose1Taken;
-
-    boolean isDose2Taken;
 }

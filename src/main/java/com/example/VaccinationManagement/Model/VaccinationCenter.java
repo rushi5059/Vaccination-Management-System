@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE) // make all variables private inside an Entity
+@Builder
 public class VaccinationCenter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

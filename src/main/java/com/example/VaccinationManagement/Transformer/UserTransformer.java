@@ -8,6 +8,7 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class UserTransformer {
     public static User UserRequestDtoToUser(UserRequestDto userRequestDto){
+    //we make it static because we don't want to create an object of it
         return User.builder()
                 .name(userRequestDto.getName())
                 .age(userRequestDto.getAge())
